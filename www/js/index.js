@@ -46,23 +46,5 @@ var app = {
 
         console.log('Received Event: ' + id);
     }
-    scan: function() {
-        console.log('scanning');
-        try {
-            cordova.plugins.barcodeScanner.scan(
-      function (result) {
-          alert("We got a barcode\n" +
-                "Result: " + result.text + "\n" +
-                "Format: " + result.format + "\n" +
-                "Cancelled: " + result.cancelled);
-      }, 
-      function (error) {
-          alert("Scanning failed: " + error);
-      }
-   );
-        });
-        } catch (ex) {
-            console.log(ex.message);
-        }
-    }
+    
 };
