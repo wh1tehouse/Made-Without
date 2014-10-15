@@ -69,7 +69,7 @@ scan: function() {
                 "cancelled: " + result.cancelled + "\n");
             document.getElementById("info").innerHTML = result.text;
             console.log(result);
-            window.localStorage.setItem("barcode", "TEST");
+            window.localStorage.setItem("barcode", result.text);
             window.location.assign("product.html")
             /*
             if (args.format == "QR_CODE") {
