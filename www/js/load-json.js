@@ -3,15 +3,14 @@ $(document).ready(function(){
 		var output = $('#output');
 	
 		$.ajax({
-			url: 'http://samcroft.co.uk/demos/updated-load-data-into-phonegap/landmarks.php',
+			url: 'http://trolleychecker.com/ean_json.php',
 			dataType: 'jsonp',
 			jsonp: 'jsoncallback',
 			timeout: 5000,
 			success: function(data, status){
 				$.each(data, function(i,item){ 
-					var landmark = '<h1>'+item.name+'</h1>'
-					+ '<p>'+item.latitude+'<br>'
-					+ item.longitude+'</p>';
+					var landmark = '<h1>'+item.ean+'</h1>'
+					+ '<p>'+item.description+'<br></p>';
 				
 					output.append(landmark);
 				});
