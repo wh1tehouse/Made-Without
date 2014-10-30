@@ -30,23 +30,16 @@
     <body>
         <div class="app">
             <h1>Apache Cordova</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
-            </div>
-            <p><a href="#" class="topcoat-button" id="scan">SCAN</a></p>
+            <h3><script type="text/javascript">document.write (window.localStorage.getItem("barcode"));</script></h3>
+            <p><a href="#" class="topcoat-button" id="scan"><img src="img/barcode.png"></a></p>
             <p id="info"></p>
-            <p id="geolocation"></p>
-            <h2>OPENING LINKS:</h2>
-            <p><a href="#" class="topcoat-button" onclick="window.open('http://www.nhl.com', '_blank', 'location=yes');">InAppBrowser</a></p>
-            <p><a href="#" class="topcoat-button" onclick="window.open('http://www.nhl.com', '_system', 'location=yes');">System Browser</a></p>
-            <p><a href="#" class="topcoat-button" onclick="window.open('http://www.yahoo.com', '_self', 'location=yes');">This Webview</a></p>
-            <p><a href="#" class="topcoat-button" onclick="window.plugins.childBrowser.showWebPage('http://www.nhl.com', {});">ChildBrowser</a></p>
+            <div id="output"></div>
         </div>
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="barcodescanner.js"></script>
-        <script type="text/javascript" src="childbrowser.js"></script>
+        <script type="text/javascript" src="../www/cordova.js"></script>
+        <script type="text/javascript" src="../www/barcodescanner.js"></script>
+        <script type="text/javascript" src="../www/childbrowser.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="../www/js/load.js"></script>
         <script type="text/javascript">
             app.initialize();
         </script>
