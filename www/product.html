@@ -53,7 +53,7 @@
                 <div class="app">
             <h1>Apache Cordova Test</h1>
             <h3><script type="text/javascript">document.write (window.localStorage.getItem("barcode"));</script></h3>
-            <script type="text/javascript">document.write ('<img src="http://trolleychecker.com/allergy/image.php?upc=' . window.localStorage.getItem("barcode") . '">');
+            <img src="dummy.jpg" id="allergies">
             <p><a href="#" class="topcoat-button" id="scan">SCAN</a></p>
             <p id="info"></p>
             <div id="output"></div>
@@ -69,6 +69,8 @@
         <script src="js/vendor/jquery-2.1.0.min.js"></script>
         <script src="js/helper.js"></script>
         <script src="js/main.js"></script>
+        
+        <script type="text/javascript">document.getElementById('allergies').src = 'http://trolleychecker.com/allergy/image.php?upc=' . window.localStorage.getItem("barcode");</script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
