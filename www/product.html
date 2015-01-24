@@ -70,7 +70,7 @@
         <script src="js/helper.js"></script>
         <script src="js/main.js"></script>
         
-        <script type="text/javascript">document.getElementById('allergies').src = 'http://trolleychecker.com/allergy/image.php?upc=' + '535984';</script>
+        <script type="text/javascript">document.getElementById('allergies').src = 'http://trolleychecker.com/allergy/image.php?upc=' + window.localStorage.getItem("barcode");</script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
