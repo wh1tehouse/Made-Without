@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+        <meta http-equiv="cleartype" content="on">
+
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/touch/apple-touch-icon-144x144-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/touch/apple-touch-icon-114x114-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/touch/apple-touch-icon-72x72-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" href="img/touch/apple-touch-icon-57x57-precomposed.png">
+        <link rel="shortcut icon" sizes="196x196" href="img/touch/touch-icon-196x196.png">
+        <link rel="shortcut icon" href="img/touch/apple-touch-icon.png">
+
+        <!-- Tile icon for Win8 (144x144 + tile color) -->
+        <meta name="msapplication-TileImage" content="img/touch/apple-touch-icon-144x144-precomposed.png">
+        <meta name="msapplication-TileColor" content="#222222">
+
+        <!-- SEO: If mobile URL is different from desktop URL, add a canonical link to the desktop page -->
+        <!--
+        <link rel="canonical" href="http://www.example.com/" >
+        -->
+
+        <!-- Add to homescreen for Chrome on Android -->
+        <!--
+        <meta name="mobile-web-app-capable" content="yes">
+        -->
+
+        <!-- For iOS web apps. Delete if not needed. https://github.com/h5bp/mobile-boilerplate/issues/94 -->
+        <!--
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="apple-mobile-web-app-title" content="">
+        -->
+
+        <!-- This script prevents links from opening in Mobile Safari. https://gist.github.com/1042026 -->
+        <!--
+        <script>(function(a,b,c){if(c in b&&b[c]){var d,e=a.location,f=/^(a|html)$/i;a.addEventListener("click",function(a){d=a.target;while(!f.test(d.nodeName))d=d.parentNode;"href"in d&&(d.href.indexOf("http")||~d.href.indexOf(e.host))&&(a.preventDefault(),e.href=d.href)},!1)}})(document,window.navigator,"standalone")</script>
+        -->
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        <script src="js/vendor/modernizr-2.7.1.min.js"></script>
+    </head>
+    <body>
+
+        <!-- Add your site or application content here -->
+
+        <div class="app">
+            <h1>Apache Cordova</h1>
+            <div id="deviceready" class="blink">
+                <p class="event listening">Connecting to Device</p>
+                <p class="event received">Device is Ready</p>
+            </div>
+            <p><a href="#" class="topcoat-button" id="scan">SCAN</a></p>
+            <p id="info"></p>
+            <p id="geolocation"></p>
+            <h2>OPENING LINKS:</h2>
+            <p><a href="#" class="topcoat-button" onclick="window.open('http://www.nhl.com', '_blank', 'location=yes');">InAppBrowser</a></p>
+            <p><a href="#" class="topcoat-button" onclick="window.open('http://www.nhl.com', '_system', 'location=yes');">System Browser</a></p>
+            <p><a href="#" class="topcoat-button" onclick="window.open('http://m.trolleychecker.com', '_self', 'location=yes');">This Webview</a></p>
+            <p><a href="#" class="topcoat-button" onclick="window.plugins.childBrowser.showWebPage('http://www.nhl.com', {});">ChildBrowser</a></p>
+        </div>
+
+	<table width="300" align="center">
+	<tr><td colspan="3" align="center" height="6\">
+	<img src="http://trolleychecker.com/allergy/image.php?upc=535984">
+	<font face="arial" size="3">TrolleyChecker.com helping you to save on your branded grocery shopping.</font></td></tr></table>
+	<table align="center"><tr><td colspan="3">
+		<font face="arial" size="3">Choose your supermarket below.<BR></font>
+		</td></tr>
+		<tr><td size="100"><a href="search.php?store=Tesco"><font face="arial">Tesco</font></a></td>
+		<td size="100" align="right"><a href="search.php?store=Asda"><font face="arial">Asda</font></a></td>
+		<td size="100" align="right"><a href="search.php?store=Sainsburys"><font face="arial">Sainsburys</font></a>
+		</td></tr></table>
+	<table width="95%" align="center">
+	<tr><td colspan="2" height="10"></td></tr>
+	<tr>
+	<td align="center" width="60" height="60" bgcolor="#C062D3" style="border-style: solid; border-width: 2px; border-color: #5A016D"><font face="arial" size="2" color="#FFFFFF"><B>SCAN</B></font></td><td>
+	<font face="arial" size="2">Complete your grocery shopping as normal, but scan every branded item with TrolleyChecker.<BR>
+	</font>
+	</td></tr>
+	<tr><td height="10"></td></tr>
+	<tr><td align="center" width="60" height="60" bgcolor="#C062D3" style="border-style: solid; border-width: 2px; border-color: #5A016D"><font face="arial" size="2" color="#FFFFFF"><B>SPLIT</B></font></td>
+	<td>
+	<font face="arial" size="2">
+	Split your items into two transactions as instructed, <font color=\"green\">GREEN</font> (cheapest in the supermarket you're in) & <font color="red">RED</font> (cheapest in another supermarket).<BR><BR>
+	</td></tr>
+	<tr><td height="10"></td></tr>
+	<tr><td align="center" width="60" height="60" bgcolor="#C062D3" style="border-style: solid; border-width: 2px; border-color: #5A016D"><font face="arial" size="2" color="#FFFFFF"><B>SAVE</B></font></td>
+	<td>
+	<font face="arial" size="2">
+	Submit the receipt for the <font color="red">RED</font> transaction to the supermarkets price matching scheme and receive a voucher.
+	</font></td></tr>
+	</table>
+
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="barcodescanner.js"></script>
+        <script type="text/javascript" src="childbrowser.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript">
+            app.initialize();
+        </script>
+        <script src="js/vendor/jquery-2.1.0.min.js"></script>
+        <script src="js/helper.js"></script>
+        <script src="js/main.js"></script>
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X');ga('send','pageview');
+        </script>
+    </body>
+</html>
