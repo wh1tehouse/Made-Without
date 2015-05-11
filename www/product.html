@@ -87,7 +87,7 @@ xmlhttp.onreadystatechange=function()
     for (i=0;i<x.length;i++)
       {
       txt=txt + "<tr>";
-      xx=x[i].getElementsByTagName("TITLE");
+      xx=x[i].getElementsByTagName("item");
         {
         try
           {
@@ -98,7 +98,7 @@ xmlhttp.onreadystatechange=function()
           txt=txt + "<td>&nbsp;</td>";
           }
         }
-    xx=x[i].getElementsByTagName("ARTIST");
+    xx=x[i].getElementsByTagName("allergen");
       {
         try
           {
@@ -122,9 +122,6 @@ xmlhttp.send();
 <div id="txtCDInfo">
 <button onclick="loadXMLDoc('http://trolleychecker.com/allergy/jquery_xml.xml')">Get CD info</button>
 </div>
-<script type="text/javascript">
-loadXMLDoc('http://trolleychecker.com/allergy/jquery_xml.xml')
-</script>
 
             <div id="txtCDInfo">
             <script type="text/javascript">
