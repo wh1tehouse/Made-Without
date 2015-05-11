@@ -55,6 +55,16 @@
 <body bgcolor="99b58d">
 
         <!-- Add your site or application content here -->
+                <div class="app">
+            <div style="text-align: center">
+            <h1><img src="madewithout.png" alt="Made Without" width="200" height="145" align="middle"></h1>
+            <h3><script type="text/javascript">document.write (window.localStorage.getItem("barcode").substr(2));</script></h3>
+            <img src="dummy.jpg" width="150" height="220" id="allergies">
+            <p><a href="#" class="topcoat-button" id="scan"><img src="barcode.png"></a></p>
+            </div>
+            <p id="info"></p>
+            <div id="output"></div>
+
 <script type="text/javascript">
 function loadXMLDoc(url)
 {
@@ -109,18 +119,16 @@ xmlhttp.open("GET",url,true);
 xmlhttp.send();
 }
 </script>
-                <div class="app">
-            <div style="text-align: center">
-            <h1><img src="madewithout.png" alt="Made Without" width="200" height="145" align="middle"></h1>
-            <h3><script type="text/javascript">document.write (window.localStorage.getItem("barcode").substr(2));</script></h3>
-            <img src="dummy.jpg" width="150" height="220" id="allergies">
-            <p><a href="#" class="topcoat-button" id="scan"><img src="barcode.png"></a></p>
-            </div>
-            <p id="info"></p>
-            <div id="output"></div>
+<div id="txtCDInfo">
+<button onclick="loadXMLDoc('http://trolleychecker.com/allergy/jquery_xml.xml')">Get CD info</button>
+</div>
+<script type="text/javascript">
+loadXMLDoc('http://trolleychecker.com/allergy/jquery_xml.xml')
+</script>
+
             <div id="txtCDInfo">
             <script type="text/javascript">
-loadXMLDoc('http://trolleychecker.com/allergy/jquery_xml.xml'+ window.localStorage.getItem("barcode").substr(2));
+loadXMLDoc('http://trolleychecker.com/allergy/xml.php'+ window.localStorage.getItem("barcode").substr(2));
 </script>
 </div>
         </div>
