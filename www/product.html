@@ -83,11 +83,11 @@ xmlhttp.onreadystatechange=function()
   if (xmlhttp.readyState==4 && xmlhttp.status==200)
     {
     txt="<table border='1'><tr><th>Title</th><th>Artist</th></tr>";
-    x=xmlhttp.responseXML.documentElement.getElementsByTagName("CD");
+    x=xmlhttp.responseXML.documentElement.getElementsByTagName("item");
     for (i=0;i<x.length;i++)
       {
       txt=txt + "<tr>";
-      xx=x[i].getElementsByTagName("item");
+      xx=x[i].getElementsByTagName("allergen");
         {
         try
           {
@@ -98,7 +98,7 @@ xmlhttp.onreadystatechange=function()
           txt=txt + "<td>&nbsp;</td>";
           }
         }
-    xx=x[i].getElementsByTagName("allergen");
+    xx=x[i].getElementsByTagName("contains");
       {
         try
           {
