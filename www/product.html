@@ -82,7 +82,7 @@ xmlhttp.onreadystatechange=function()
   {
   if (xmlhttp.readyState==4 && xmlhttp.status==200)
     {
-    txt="<table border='1'><tr><th>Title</th><th>Artist</th></tr>";
+    txt="<table border='1'><tr><th>Allergen</th><th>Contains</th></tr>";
     x=xmlhttp.responseXML.documentElement.getElementsByTagName("item");
     for (i=0;i<x.length;i++)
       {
@@ -125,7 +125,8 @@ xmlhttp.send();
 
             <div id="txtCDInfo">
             <script type="text/javascript">
-loadXMLDoc('http://trolleychecker.com/allergy/xml.php'+ window.localStorage.getItem("barcode").substr(2));
+//loadXMLDoc('http://trolleychecker.com/allergy/xml.php'+ window.localStorage.getItem("barcode").substr(2));
+loadXMLDoc('http://trolleychecker.com/allergy/xml.php?upc=270359');
 </script>
 </div>
         </div>
