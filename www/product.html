@@ -55,7 +55,60 @@
 <body bgcolor="99b58d">
 
         <!-- Add your site or application content here -->
-
+<script type="text/javascript">
+function loadXMLDoc(url)
+{
+var xmlhttp;
+var txt,xx,x,i;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xmlhttp.onreadystatechange=function()
+  {
+  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    {
+    txt="<table border='1'><tr><th>Title</th><th>Artist</th></tr>";
+    x=xmlhttp.responseXML.documentElement.getElementsByTagName("CD");
+    for (i=0;i<x.length;i++)
+      {
+      txt=txt + "<tr>";
+      xx=x[i].getElementsByTagName("TITLE");
+        {
+        try
+          {
+          txt=txt + "<td>" + xx[0].firstChild.nodeValue + "</td>";
+          }
+        catch (er)
+          {
+          txt=txt + "<td>&nbsp;</td>";
+          }
+        }
+    xx=x[i].getElementsByTagName("ARTIST");
+      {
+        try
+          {
+          txt=txt + "<td>" + xx[0].firstChild.nodeValue + "</td>";
+          }
+        catch (er)
+          {
+          txt=txt + "<td>&nbsp;</td>";
+          }
+        }
+      txt=txt + "</tr>";
+      }
+    txt=txt + "</table>";
+    document.getElementById('txtCDInfo').innerHTML=txt;
+    }
+  }
+xmlhttp.open("GET",url,true);
+xmlhttp.send();
+}
+</script>
                 <div class="app">
             <div style="text-align: center">
             <h1><img src="madewithout.png" alt="Made Without" width="200" height="145" align="middle"></h1>
@@ -65,6 +118,11 @@
             </div>
             <p id="info"></p>
             <div id="output"></div>
+            <div id="txtCDInfo">
+            <script type="text/javascript">
+loadXMLDoc('http://trolleychecker.com/allergy/jquery_xml.xml'+ window.localStorage.getItem("barcode").substr(2));
+</script>
+</div>
         </div>
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="barcodescanner.js"></script>
