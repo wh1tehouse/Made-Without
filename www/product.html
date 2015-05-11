@@ -45,26 +45,6 @@
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
         <script src="js/vendor/modernizr-2.7.1.min.js"></script>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <style type="text/css">
-    body {
-	background-color: #99b58d;
-}
-    </style>
-    </head>
-<body bgcolor="99b58d">
-
-        <!-- Add your site or application content here -->
-                <div class="app">
-            <div style="text-align: center">
-            <h1><img src="madewithout.png" alt="Made Without" width="200" height="145" align="middle"></h1>
-            <h3><script type="text/javascript">document.write (window.localStorage.getItem("barcode").substr(2));</script></h3>
-            <img src="dummy.jpg" width="150" height="220" id="allergies">
-            <p><a href="#" class="topcoat-button" id="scan"><img src="barcode.png"></a></p>
-            </div>
-            <p id="info"></p>
-            <div id="output"></div>
-
 <script type="text/javascript">
 function loadXMLDoc(url)
 {
@@ -88,27 +68,34 @@ xmlhttp.onreadystatechange=function()
       {
       txt=txt + "<tr>";
       xx=x[i].getElementsByTagName("allergen");
+	  yy=x[i].getElementsByTagName("contains");
         {
         try
           {
-          txt=txt + "<td>" + xx[0].firstChild.nodeValue + "</td>";
+          txt=txt + "<td><font color='";
+		  if(yy[0].firstChild.nodeValue = 1){
+			  txt=txt + "red'>";
+		  }
+		  else{
+		  }
+		  txt=txt + xx[0].firstChild.nodeValue + "</font></td>";
           }
         catch (er)
           {
           txt=txt + "<td>&nbsp;</td>";
           }
         }
-    xx=x[i].getElementsByTagName("contains");
-      {
-        try
-          {
-          txt=txt + "<td>" + xx[0].firstChild.nodeValue + "</td>";
-          }
-        catch (er)
-          {
-          txt=txt + "<td>&nbsp;</td>";
-          }
-        }
+    //xx=x[i].getElementsByTagName("contains");
+      //{
+        //try
+          //{
+          //txt=txt + "<td>" + xx[0].firstChild.nodeValue + "</td>";
+          //}
+        //catch (er)
+          //{
+          //txt=txt + "<td>&nbsp;</td>";
+          //}
+        //}
       txt=txt + "</tr>";
       }
     txt=txt + "</table>";
@@ -119,16 +106,31 @@ xmlhttp.open("GET",url,true);
 xmlhttp.send();
 }
 </script>
-<div id="txtCDInfo">
-<button onclick="loadXMLDoc('http://trolleychecker.com/allergy/jquery_xml.xml')">Get CD info</button>
-</div>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <style type="text/css">
+    body {
+	background-color: #99b58d;
+}
+    </style>
+    </head>
+<body bgcolor="99b58d">
 
+        <!-- Add your site or application content here -->
+                <div class="app">
+            <div style="text-align: center">
+            <h1><img src="madewithout.png" alt="Made Without" width="200" height="145" align="middle"></h1>
+            <h3><script type="text/javascript">document.write (window.localStorage.getItem("barcode").substr(2));</script></h3>
             <div id="txtCDInfo">
             <script type="text/javascript">
 loadXMLDoc('http://trolleychecker.com/allergy/xml.php?upc='+ window.localStorage.getItem("barcode").substr(2));
-//loadXMLDoc('http://trolleychecker.com/allergy/xml.php?upc=270359');
 </script>
 </div>
+            <img src="dummy.jpg" width="150" height="220" id="allergies">
+            <p><a href="#" class="topcoat-button" id="scan"><img src="barcode.png"></a></p>
+            </div>
+            <p id="info"></p>
+            <div id="output"></div>
+
         </div>
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="barcodescanner.js"></script>
