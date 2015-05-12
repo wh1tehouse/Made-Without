@@ -86,17 +86,17 @@ xmlhttp.onreadystatechange=function()
           txt=txt + "<td>&nbsp;</td>";
           }
         }
-    //xx=x[i].getElementsByTagName("contains");
-      //{
-        //try
-          //{
-          //txt=txt + "<td>" + xx[0].firstChild.nodeValue + "</td>";
-          //}
-        //catch (er)
-          //{
-          //txt=txt + "<td>&nbsp;</td>";
-          //}
-        //}
+    xx=x[i].getElementsByTagName("contains");
+      {
+        try
+          {
+          txt=txt + "<td>" + xx[0].firstChild.nodeValue + "</td>";
+          }
+        catch (er)
+          {
+          txt=txt + "<td>&nbsp;</td>";
+          }
+        }
       txt=txt + "</tr>";
       }
     txt=txt + "</table>";
