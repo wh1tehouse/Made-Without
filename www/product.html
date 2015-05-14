@@ -140,6 +140,9 @@ loadXMLDoc('http://trolleychecker.com/allergy/xml.php?upc='+ window.localStorage
             <div style="text-align: center;line-height: 150%;word-spacing: 1px;font-size: xx-large;}">
   <script type="text/javascript">
   document.write("<p>Nuts Dairy Egg Soya<BR>Yeast Gluten Sesame</p>");
+  if(allergies[Nuts] == 1){
+	  document.write("NUTS");
+  }
   </script>
   </div>
 
