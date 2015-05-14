@@ -64,6 +64,7 @@ xmlhttp.onreadystatechange=function()
     {
     txt="<table border='1'><tr><th>Allergen</th><th>Contains</th></tr>";
     x=xmlhttp.responseXML.documentElement.getElementsByTagName("item");
+	var allergies = {};
     for (i=0;i<x.length;i++)
       {
       txt=txt + "<tr>";
@@ -71,7 +72,6 @@ xmlhttp.onreadystatechange=function()
 	  yy=x[i].getElementsByTagName("contains");
 	  allergen = xx[0].firstChild.nodeValue;
 	  contains = yy[0].firstChild.nodeValue;
-	  var allergies = {};
 	  allergies[allergen] = contains;
         {
         try
