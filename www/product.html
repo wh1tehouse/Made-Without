@@ -68,7 +68,7 @@ xmlhttp.onreadystatechange=function()
       {
       txt=txt + "<tr>";
       xx=x[i].getElementsByTagName("allergen");
-	  //yy=x[i].getElementsByTagName("contains");
+	  yy=x[i].getElementsByTagName("contains");
         {
         try
           {
@@ -86,11 +86,11 @@ xmlhttp.onreadystatechange=function()
           txt=txt + "<td>&nbsp;</td>";
           }
         }
-    xx=x[i].getElementsByTagName("contains");
+    //xx=x[i].getElementsByTagName("contains");
       {
         try
           {
-          txt=txt + "<td>" + xx[0].firstChild.nodeValue + "</td>";
+          txt=txt + "<td>" + yy[0].firstChild.nodeValue + "</td>";
           }
         catch (er)
           {
