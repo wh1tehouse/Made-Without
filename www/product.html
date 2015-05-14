@@ -69,6 +69,9 @@ xmlhttp.onreadystatechange=function()
       txt=txt + "<tr>";
       xx=x[i].getElementsByTagName("allergen");
 	  yy=x[i].getElementsByTagName("contains");
+	  allergen = xx[0].firstChild.nodeValue;
+	  contains = yy[0].firstChild.nodeValue;
+	  allergies[allergen] = [contains];
         {
         try
           {
@@ -102,6 +105,7 @@ xmlhttp.onreadystatechange=function()
     txt=txt + "</table>";
     document.getElementById('txtCDInfo').innerHTML=txt;
     }
+	document.getElementById("demo").innetHTML=allergies.toString();
   }
 xmlhttp.open("GET",url,true);
 xmlhttp.send();
@@ -126,7 +130,8 @@ xmlhttp.send();
 loadXMLDoc('http://trolleychecker.com/allergy/xml.php?upc='+ window.localStorage.getItem("barcode").substr(2));
 </script>
 </div>
-            <img src="dummy.jpg" width="150" height="220" id="allergies">
+            <!--<img src="dummy.jpg" width="150" height="220" id="allergies">-->
+            <p id="demo"></p>
             <p><a href="#" class="topcoat-button" id="scan"><img src="barcode.png"></a></p>
             </div>
             <p id="info"></p>
@@ -145,7 +150,7 @@ loadXMLDoc('http://trolleychecker.com/allergy/xml.php?upc='+ window.localStorage
         <script src="js/helper.js"></script>
         <script src="js/main.js"></script>
         
-        <script type="text/javascript">document.getElementById('allergies').src = 'http://trolleychecker.com/allergy/image.php?upc=' + window.localStorage.getItem("barcode").substr(2);</script>
+        <!--<script type="text/javascript">document.getElementById('allergies').src = 'http://trolleychecker.com/allergy/image.php?upc=' + window.localStorage.getItem("barcode").substr(2);</script>-->
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
 <script>
