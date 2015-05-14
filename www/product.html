@@ -108,7 +108,7 @@ xmlhttp.onreadystatechange=function()
 	if(allergens.Nuts == 1){
 		allergenText = allergenText + "NUTS";
 	}
-	document.getElementById('allergens').innerHTML="TEST";
+	document.getElementById('allergens').innerHTML=allergenText;
     }
   }
 xmlhttp.open("GET",url,true);
