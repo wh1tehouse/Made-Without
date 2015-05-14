@@ -106,7 +106,10 @@ xmlhttp.onreadystatechange=function()
     txt=txt + "</table>";
     document.getElementById('txtCDInfo').innerHTML=txt;
     }
-	//document.getElementById("demo").innetHTML=allergies.toString();
+	if(allergens.Nuts == 1){
+		allergenText = allergenText + "NUTS";
+	}
+	document.getElementById("allergens").innetHTML=allergenText;
   }
 xmlhttp.open("GET",url,true);
 xmlhttp.send();
@@ -132,7 +135,7 @@ loadXMLDoc('http://trolleychecker.com/allergy/xml.php?upc='+ window.localStorage
 </script>
 </div>
             <!--<img src="dummy.jpg" width="150" height="220" id="allergies">-->
-            <p id="demo"></p>
+            <p id="allergens"></p>
             <p><a href="#" class="topcoat-button" id="scan"><img src="barcode.png"></a></p>
             </div>
             <p id="info"></p>
@@ -140,9 +143,6 @@ loadXMLDoc('http://trolleychecker.com/allergy/xml.php?upc='+ window.localStorage
             <div style="text-align: center;line-height: 150%;word-spacing: 1px;font-size: xx-large;}">
   <script type="text/javascript">
   document.write("<p>Nuts Dairy Egg Soya<BR>Yeast Gluten Sesame</p>");
-  if(allergies.Nuts == 1){
-	  document.write("NUTS");
-  }
   </script>
   </div>
 
