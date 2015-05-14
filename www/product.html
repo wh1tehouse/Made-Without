@@ -108,6 +108,9 @@ xmlhttp.onreadystatechange=function()
 	if(allergies.Nuts == 1){
 		allergenText = allergenText + "NUTS";
 	}
+	else{
+		allergenText = "NOT";
+	}
 	document.getElementById('allergens').innerHTML=allergenText;
     }
   }
