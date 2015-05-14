@@ -108,7 +108,7 @@ xmlhttp.onreadystatechange=function()
 	if(allergens.Nuts == 1){
 		allergenText = allergenText + "NUTS";
 	}
-	document.getElementById('allergens').innetHTML="TEST";
+	document.getElementById('allergens').innerHTML="TEST";
     }
   }
 xmlhttp.open("GET",url,true);
@@ -135,7 +135,7 @@ loadXMLDoc('http://trolleychecker.com/allergy/xml.php?upc='+ window.localStorage
 </script>
 </div>
             <!--<img src="dummy.jpg" width="150" height="220" id="allergies">-->
-            <p id="allergens"></p>
+            <div id="allergens"></div>
             <p><a href="#" class="topcoat-button" id="scan"><img src="barcode.png"></a></p>
             </div>
             <p id="info"></p>
