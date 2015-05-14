@@ -113,23 +113,24 @@ xmlhttp.onreadystatechange=function()
 		allergenText = allergenText + "<span style=\"color:red\">Nuts</span>";
 	}
 	if(allergies.Dairy == 1){
-		allergenText = allergenText + "Dairy";
+		allergenText = allergenText + "&nbsp;Dairy";
 	}
 	else{
-		allergenText = allergenText + "<span style=\"color:red\">Dairy</span>";
+		allergenText = allergenText + "<span style=\"color:red\">&nbspDairy</span>";
 	}
 	if(allergies.Egg == 1){
-		allergenText = allergenText + "Egg";
+		allergenText = allergenText + "&nbspEgg";
 	}
 	else{
-		allergenText = allergenText + "<span style=\"color:red\">Egg</span>";
+		allergenText = allergenText + "<span style=\"color:red\">&nbspEgg</span>";
 	}
 	if(allergies.Soya == 1){
-		allergenText = allergenText + "Soya";
+		allergenText = allergenText + "&nbspSoya";
 	}
 	else{
-		allergenText = allergenText + "<span style=\"color:red\">Soya</span>";
+		allergenText = allergenText + "<span style=\"color:red\">&nbspSoya</span>";
 	}
+	allergenText = allergenText + "<BR>";
 	if(allergies.Yeast == 1){
 		allergenText = allergenText + "Yeast";
 	}
@@ -137,16 +138,16 @@ xmlhttp.onreadystatechange=function()
 		allergenText = allergenText + "<span style=\"color:red\">Yeast</span>";
 	}
 	if(allergies.Gluten == 1){
-		allergenText = allergenText + "Gluten";
+		allergenText = allergenText + "&nbspGluten";
 	}
 	else{
-		allergenText = allergenText + "<span style=\"color:red\">Gluten</span>";
+		allergenText = allergenText + "<span style=\"color:red\">&nbspGluten</span>";
 	}
 	if(allergies.Sesame == 1){
-		allergenText = allergenText + "Sesame";
+		allergenText = allergenText + "&nbspSesame";
 	}
 	else{
-		allergenText = allergenText + "<span style=\"color:red\">Sesame</span>";
+		allergenText = allergenText + "<span style=\"color:red\">&nbspSesame</span>";
 	}
 	document.getElementById('allergens').innerHTML=allergenText;
     }
