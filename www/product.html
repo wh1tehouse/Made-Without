@@ -69,9 +69,9 @@ xmlhttp.onreadystatechange=function()
       txt=txt + "<tr>";
       xx=x[i].getElementsByTagName("allergen");
 	  yy=x[i].getElementsByTagName("contains");
-	  allergen = xx[0].firstChild.nodeValue;
-	  contains = yy[0].firstChild.nodeValue;
-	  allergies[allergen] = [contains];
+	  //allergen = xx[0].firstChild.nodeValue;
+	  //contains = yy[0].firstChild.nodeValue;
+	  //allergies[allergen] = [contains];
         {
         try
           {
@@ -105,7 +105,7 @@ xmlhttp.onreadystatechange=function()
     txt=txt + "</table>";
     document.getElementById('txtCDInfo').innerHTML=txt;
     }
-	document.getElementById("demo").innetHTML=allergies.toString();
+	//document.getElementById("demo").innetHTML=allergies.toString();
   }
 xmlhttp.open("GET",url,true);
 xmlhttp.send();
