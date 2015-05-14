@@ -46,6 +46,7 @@
         <link rel="stylesheet" href="css/main.css">
         <script src="js/vendor/modernizr-2.7.1.min.js"></script>
 <script type="text/javascript">
+var allergies = {};
 function loadXMLDoc(url)
 {
 var xmlhttp;
@@ -64,7 +65,6 @@ xmlhttp.onreadystatechange=function()
     {
     txt="<table border='1'><tr><th>Allergen</th><th>Contains</th></tr>";
     x=xmlhttp.responseXML.documentElement.getElementsByTagName("item");
-	var allergies = {};
     for (i=0;i<x.length;i++)
       {
       txt=txt + "<tr>";
