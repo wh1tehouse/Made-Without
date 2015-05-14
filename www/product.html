@@ -72,7 +72,7 @@ xmlhttp.onreadystatechange=function()
 	  yy=x[i].getElementsByTagName("contains");
 	  allergen = xx[0].firstChild.nodeValue;
 	  contains = yy[0].firstChild.nodeValue;
-	  allergies[allergen] = parseInt(contains+1);
+	  allergies[allergen] = contains;
         {
         try
           {
@@ -83,7 +83,7 @@ xmlhttp.onreadystatechange=function()
 		  //else{
 			  //txt=txt + "red'>";
 		  //}
-		  txt=txt + xx[0].firstChild.nodeValue + allergies.Gluten + "</td>";
+		  txt=txt + xx[0].firstChild.nodeValue + allergies.Yeast + "</td>";
           }
         catch (er)
           {
