@@ -105,12 +105,48 @@ xmlhttp.onreadystatechange=function()
       }
     txt=txt + "</table>";
     document.getElementById('txtCDInfo').innerHTML=txt;
-	allergenText = "Hello World";
+	allergenText = "";
 	if(allergies.Nuts == 1){
-		allergenText = allergenText + "NUTS";
+		allergenText = allergenText + "Nuts";
 	}
 	else{
-		allergenText = "NOT";
+		allergenText = allergenText + "<span style=\"color:red\">Nuts</span>";
+	}
+	if(allergies.Dairy == 1){
+		allergenText = allergenText + "Dairy";
+	}
+	else{
+		allergenText = allergenText + "<span style=\"color:red\">Dairy</span>";
+	}
+	if(allergies.Egg == 1){
+		allergenText = allergenText + "Egg";
+	}
+	else{
+		allergenText = allergenText + "<span style=\"color:red\">Egg</span>";
+	}
+	if(allergies.Soya == 1){
+		allergenText = allergenText + "Soya";
+	}
+	else{
+		allergenText = allergenText + "<span style=\"color:red\">Soya</span>";
+	}
+	if(allergies.Yeast == 1){
+		allergenText = allergenText + "Yeast";
+	}
+	else{
+		allergenText = allergenText + "<span style=\"color:red\">Yeast</span>";
+	}
+	if(allergies.Gluten == 1){
+		allergenText = allergenText + "Gluten";
+	}
+	else{
+		allergenText = allergenText + "<span style=\"color:red\">Gluten</span>";
+	}
+	if(allergies.Sesame == 1){
+		allergenText = allergenText + "Sesame";
+	}
+	else{
+		allergenText = allergenText + "<span style=\"color:red\">Sesame</span>";
 	}
 	document.getElementById('allergens').innerHTML=allergenText;
     }
@@ -139,7 +175,9 @@ loadXMLDoc('http://trolleychecker.com/allergy/xml.php?upc='+ window.localStorage
 </script>
 </div>
             <!--<img src="dummy.jpg" width="150" height="220" id="allergies">-->
+            <div style="text-align: center;line-height: 150%;word-spacing: 1px;font-size: xx-large;}">
             <div id="allergens"></div>
+            </div>
             <p><a href="#" class="topcoat-button" id="scan"><img src="barcode.png"></a></p>
             </div>
             <p id="info"></p>
