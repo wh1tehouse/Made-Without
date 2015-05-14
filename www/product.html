@@ -68,7 +68,7 @@ xmlhttp.onreadystatechange=function()
       {
       txt=txt + "<tr>";
       xx=x[i].getElementsByTagName("allergen");
-	  yy=x[i].getElementsByTagName("contains");
+	  //yy=x[i].getElementsByTagName("contains");
         {
         try
           {
@@ -79,7 +79,7 @@ xmlhttp.onreadystatechange=function()
 		  else{
 			  txt=txt + "red'>";
 		  }
-		  txt=txt + xx[0].firstChild.nodeValue + yy[0].firstChild.nodeValue + "</font></td>";
+		  txt=txt + xx[0].firstChild.nodeValue + "</font></td>";
           }
         catch (er)
           {
