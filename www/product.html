@@ -71,7 +71,8 @@ xmlhttp.onreadystatechange=function()
 	  yy=x[i].getElementsByTagName("contains");
 	  allergen = xx[0].firstChild.nodeValue;
 	  contains = yy[0].firstChild.nodeValue;
-	  allergies[allergen] = [contains];
+	  var allergies = {};
+	  allergies[allergen] = contains;
         {
         try
           {
