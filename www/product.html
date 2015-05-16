@@ -107,47 +107,47 @@ xmlhttp.onreadystatechange=function()
     document.getElementById('txtCDInfo').innerHTML=txt;
 	allergenText = "";
 	if(allergies.Nuts == 1){
-		allergenText = allergenText + "Nuts";
+		allergenText = allergenText + "<span style=\"colorwhite\">Nuts</span>";
 	}
 	else{
-		allergenText = allergenText + "<span style=\"color:red\">Nuts</span>";
+		allergenText = allergenText + "<span style=\"color:#99b58d\">Nuts</span>";
 	}
 	if(allergies.Dairy == 1){
-		allergenText = allergenText + "&nbsp;Dairy";
+		allergenText = allergenText + "<span style=\"color:white\">&nbsp;Dairy</span>";
 	}
 	else{
-		allergenText = allergenText + "<span style=\"color:red\">&nbspDairy</span>";
+		allergenText = allergenText + "<span style=\"color:#99b58d\">&nbspDairy</span>";
 	}
 	if(allergies.Egg == 1){
-		allergenText = allergenText + "&nbspEgg";
+		allergenText = allergenText + "<span style=\"color:white\">&nbspEgg</span>";
 	}
 	else{
-		allergenText = allergenText + "<span style=\"color:red\">&nbspEgg</span>";
+		allergenText = allergenText + "<span style=\"color:#99b58d\">&nbspEgg</span>";
 	}
 	if(allergies.Soya == 1){
-		allergenText = allergenText + "&nbspSoya";
+		allergenText = allergenText + "<span style=\"color:white\">&nbspSoya</span>";
 	}
 	else{
-		allergenText = allergenText + "<span style=\"color:red\">&nbspSoya</span>";
+		allergenText = allergenText + "<span style=\"color:#99b58d\">&nbspSoya</span>";
 	}
 	allergenText = allergenText + "<BR>";
 	if(allergies.Yeast == 1){
-		allergenText = allergenText + "Yeast";
+		allergenText = allergenText + "<span style=\"color:white\">Yeast</span>";
 	}
 	else{
-		allergenText = allergenText + "<span style=\"color:red\">Yeast</span>";
+		allergenText = allergenText + "<span style=\"color:#99b58d\">Yeast</span>";
 	}
 	if(allergies.Gluten == 1){
-		allergenText = allergenText + "&nbspGluten";
+		allergenText = allergenText + "<span style=\"color:white\">&nbspGluten</span>";
 	}
 	else{
-		allergenText = allergenText + "<span style=\"color:red\">&nbspGluten</span>";
+		allergenText = allergenText + "<span style=\"color:#99b58d\">&nbspGluten</span>";
 	}
 	if(allergies.Sesame == 1){
-		allergenText = allergenText + "&nbspSesame";
+		allergenText = allergenText + "<span style=\"color:white\">&nbspSesame</span>";
 	}
 	else{
-		allergenText = allergenText + "<span style=\"color:red\">&nbspSesame</span>";
+		allergenText = allergenText + "<span style=\"color:#99b58d\">&nbspSesame</span>";
 	}
 	document.getElementById('allergens').innerHTML=allergenText;
     }
@@ -183,11 +183,11 @@ loadXMLDoc('http://trolleychecker.com/allergy/xml.php?upc='+ window.localStorage
             </div>
             <p id="info"></p>
             <div id="output"></div>
-            <div style="text-align: center;line-height: 150%;word-spacing: 1px;font-size: xx-large;}">
+            <!--<div style="text-align: center;line-height: 150%;word-spacing: 1px;font-size: xx-large;}">
   <script type="text/javascript">
   document.write("<p>Nuts Dairy Egg Soya<BR>Yeast Gluten Sesame</p>");
   </script>
-  </div>
+  </div>-->
 
         </div>
         <script type="text/javascript" src="cordova.js"></script>
