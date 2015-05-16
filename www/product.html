@@ -110,44 +110,44 @@ xmlhttp.onreadystatechange=function()
 		allergenText = allergenText + "<span style=\"colorwhite\">Nuts</span>";
 	}
 	else{
-		allergenText = allergenText + "<span style=\"color:#759966\">Nuts</span>";
+		allergenText = allergenText + "<span style=\"color:#759966;text-decoration: line-through;\">Nuts</span>";
 	}
 	if(allergies.Dairy == 1){
 		allergenText = allergenText + "<span style=\"color:white\">&nbsp;Dairy</span>";
 	}
 	else{
-		allergenText = allergenText + "<span style=\"color:#759966\">&nbspDairy</span>";
+		allergenText = allergenText + "<span style=\"color:#759966;text-decoration: line-through;\">&nbspDairy</span>";
 	}
 	if(allergies.Egg == 1){
 		allergenText = allergenText + "<span style=\"color:white\">&nbspEgg</span>";
 	}
 	else{
-		allergenText = allergenText + "<span style=\"color:#759966\">&nbspEgg</span>";
+		allergenText = allergenText + "<span style=\"color:#759966;text-decoration: line-through;\">&nbspEgg</span>";
 	}
 	if(allergies.Soya == 1){
 		allergenText = allergenText + "<span style=\"color:white\">&nbspSoya</span>";
 	}
 	else{
-		allergenText = allergenText + "<span style=\"color:#759966\">&nbspSoya</span>";
+		allergenText = allergenText + "<span style=\"color:#759966;text-decoration: line-through;\">&nbspSoya</span>";
 	}
 	allergenText = allergenText + "<BR>";
 	if(allergies.Yeast == 1){
 		allergenText = allergenText + "<span style=\"color:white\">Yeast</span>";
 	}
 	else{
-		allergenText = allergenText + "<span style=\"color:#759966\">Yeast</span>";
+		allergenText = allergenText + "<span style=\"color:#759966;text-decoration: line-through;\">Yeast</span>";
 	}
 	if(allergies.Gluten == 1){
 		allergenText = allergenText + "<span style=\"color:white\">&nbspGluten</span>";
 	}
 	else{
-		allergenText = allergenText + "<span style=\"color:#759966\">&nbspGluten</span>";
+		allergenText = allergenText + "<span style=\"color:#759966;text-decoration: line-through;\">&nbspGluten</span>";
 	}
 	if(allergies.Sesame == 1){
 		allergenText = allergenText + "<span style=\"color:white\">&nbspSesame</span>";
 	}
 	else{
-		allergenText = allergenText + "<span style=\"color:#759966\">&nbspSesame</span>";
+		allergenText = allergenText + "<span style=\"color:#759966;text-decoration: line-through;\">&nbspSesame</span>";
 	}
 	document.getElementById('allergens').innerHTML=allergenText;
     }
