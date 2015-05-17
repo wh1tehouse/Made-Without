@@ -183,7 +183,7 @@ loadXMLDoc('http://trolleychecker.com/allergy/xml.php?upc='+ window.localStorage
             <div id="allergens"></div>
             </div>
             <span style="font-size: x-large;"><div id="description"></div></span>
-            <h3><script type="text/javascript">document.write (window.localStorage.getItem("barcode").substr(2));</script></h3>
+            <h3><script type="text/javascript">document.write (window.localStorage.getItem("barcode").substr(2).length);</script></h3>
             <p><a href="#" class="topcoat-button" id="scan"><img src="barcode.png"></a></p>
             </div>
             <p id="info"></p>
