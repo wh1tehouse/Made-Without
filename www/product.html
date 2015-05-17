@@ -188,9 +188,9 @@ loadXMLDoc('http://trolleychecker.com/allergy/xml.php?upc='+ window.localStorage
 			barcodeLength = barcode.length;
 			zeros = '';
 			for(x=0;x<(8-barcodeLength);x++){
-				zeros = "0" . zeros;
+				zeros = "0" + zeros;
 			}
-			document.write (zeros +barcode);
+			document.write (zeros + barcode);
             </script></h3>
             <p><a href="#" class="topcoat-button" id="scan"><img src="barcode.png"></a></p>
             </div>
