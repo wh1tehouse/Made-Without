@@ -65,6 +65,8 @@ xmlhttp.onreadystatechange=function()
     {
     txt="<table border='1'><tr><th>Allergen</th><th>Contains</th></tr>";
 	description = xmlhttp.responseXML.documentElement.getElementsByTagName("description");
+	description = description.firstChild.nodeValue;
+
     x=xmlhttp.responseXML.documentElement.getElementsByTagName("item");
     for (i=0;i<x.length;i++)
       {
