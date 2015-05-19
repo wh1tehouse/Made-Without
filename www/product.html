@@ -115,7 +115,7 @@ xmlhttp.onreadystatechange=function()
 		remainingAllergens = allergies.Dairy + allergies.Egg + allergies.Soya + allergies.Yeast + allergies.Gluten + allergies.Sesame;
 		allergenNote = allergenNote + "nuts";
 		if(remainingAllergens == 1){
-			allergenNote = allergenNote + " and ";
+			allergenNote = allergenNote + " or ";
 		}
 		else{
 			allergenNote = allergenNote + ", ";
@@ -129,7 +129,7 @@ xmlhttp.onreadystatechange=function()
 		remainingAllergens = allergies.Egg + allergies.Soya + allergies.Yeast + allergies.Gluten + allergies.Sesame;
 		allergenNote = allergenNote + "dairy";
 		if(remainingAllergens == 1){
-			allergenNote = allergenNote + " and ";
+			allergenNote = allergenNote + " or ";
 		}
 		else{
 			allergenNote = allergenNote + ", ";
@@ -143,7 +143,7 @@ xmlhttp.onreadystatechange=function()
 		remainingAllergens = allergies.Soya + allergies.Yeast + allergies.Gluten + allergies.Sesame;
 		allergenNote = allergenNote + "egg";
 		if(remainingAllergens == 1){
-			allergenNote = allergenNote + " and ";
+			allergenNote = allergenNote + " or ";
 		}
 		else{
 			allergenNote = allergenNote + ", ";
@@ -157,7 +157,7 @@ xmlhttp.onreadystatechange=function()
 		remainingAllergens = allergies.Yeast + allergies.Gluten + allergies.Sesame;
 		allergenNote = allergenNote + "soya";
 		if(remainingAllergens == 1){
-			allergenNote = allergenNote + " and ";
+			allergenNote = allergenNote + " or ";
 		}
 		else{
 			allergenNote = allergenNote + ", ";
@@ -172,7 +172,7 @@ xmlhttp.onreadystatechange=function()
 		remainingAllergens = allergies.Gluten + allergies.Sesame;
 		allergenNote = allergenNote + "yeast";
 		if(remainingAllergens == 1){
-			allergenNote = allergenNote + " and ";
+			allergenNote = allergenNote + " or ";
 		}
 		else{
 			allergenNote = allergenNote + ", ";
@@ -186,7 +186,7 @@ xmlhttp.onreadystatechange=function()
 		remainingAllergens = allergies.Sesame;
 		allergenNote = allergenNote + "gluten";
 		if(remainingAllergens == 1){
-			allergenNote = allergenNote + " and ";
+			allergenNote = allergenNote + " or ";
 		}
 		else{
 			allergenNote = allergenNote + ", ";
@@ -245,7 +245,11 @@ loadXMLDoc('http://trolleychecker.com/allergy/xml.php?upc='+ window.localStorage
 			document.write (zeros + barcode);
             </script></h3>
             <span style="font-size: x-small;">
+            <table width="90%" align="center">
+            <tr><td>
 			<div id="note"></div>
+            </td></tr>
+            </table>
             </span>
             <p><a href="#" class="topcoat-button" id="scan"><img src="barcode.png"></a></p>
             </div>
