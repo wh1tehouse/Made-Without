@@ -112,28 +112,56 @@ xmlhttp.onreadystatechange=function()
 	allergenNote = "This product does not contain ";
 	if(allergies.Nuts == 1){
 		allergenText = allergenText + "<span style=\"color:white\">Nuts</span>";
-		allergenNote = allergenNote + "nuts, ";
+		remainingAllergens = allergies.Dairy + allergies.Egg + allergies.Soya + allergies.Yeast + allergies.Gluten + allergies.Sesame;
+		allergenNote = allergenNote + "nuts";
+		if(remainingAllergens == 1){
+			allergenNote = allergenNote + " and ";
+		}
+		else{
+			allergenNote = allergenNote + ", ";
+		}
 	}
 	else{
 		allergenText = allergenText + "<span style=\"color:#759966;text-decoration: line-through;\">Nuts</span>";
 	}
 	if(allergies.Dairy == 1){
 		allergenText = allergenText + "&nbsp;<span style=\"color:white\">Dairy</span>";
-		allergenNote = allergenNote + "dairy, ";
+		remainingAllergens = allergies.Egg + allergies.Soya + allergies.Yeast + allergies.Gluten + allergies.Sesame;
+		allergenNote = allergenNote + "dairy";
+		if(remainingAllergens == 1){
+			allergenNote = allergenNote + " and ";
+		}
+		else{
+			allergenNote = allergenNote + ", ";
+		}
 	}
 	else{
 		allergenText = allergenText + "&nbsp<span style=\"color:#759966;text-decoration: line-through;\">Dairy</span>";
 	}
 	if(allergies.Egg == 1){
 		allergenText = allergenText + "&nbsp<span style=\"color:white\">Egg</span>";
-		allergenNote = allergenNote + "egg, ";
+		remainingAllergens = allergies.Soya + allergies.Yeast + allergies.Gluten + allergies.Sesame;
+		allergenNote = allergenNote + "egg";
+		if(remainingAllergens == 1){
+			allergenNote = allergenNote + " and ";
+		}
+		else{
+			allergenNote = allergenNote + ", ";
+		}
 	}
 	else{
 		allergenText = allergenText + "&nbsp<span style=\"color:#759966;text-decoration: line-through;\">Egg</span>";
 	}
 	if(allergies.Soya == 1){
 		allergenText = allergenText + "&nbsp<span style=\"color:white\">Soya</span>";
-		allergenNote = allergenNote + "soya, ";
+		remainingAllergens = allergies.Yeast + allergies.Gluten + allergies.Sesame;
+		allergenNote = allergenNote + "soya";
+		if(remainingAllergens == 1){
+			allergenNote = allergenNote + " and ";
+		}
+		else{
+			allergenNote = allergenNote + ", ";
+		}
 	}
 	else{
 		allergenText = allergenText + "&nbsp<span style=\"color:#759966;text-decoration: line-through;\">Soya</span>";
@@ -141,26 +169,40 @@ xmlhttp.onreadystatechange=function()
 	allergenText = allergenText + "<BR>";
 	if(allergies.Yeast == 1){
 		allergenText = allergenText + "<span style=\"color:white\">Yeast</span>";
-		allergenNote = allergenNote + "yeast, ";
+		remainingAllergens = allergies.Gluten + allergies.Sesame;
+		allergenNote = allergenNote + "yeast";
+		if(remainingAllergens == 1){
+			allergenNote = allergenNote + " and ";
+		}
+		else{
+			allergenNote = allergenNote + ", ";
+		}
 	}
 	else{
 		allergenText = allergenText + "<span style=\"color:#759966;text-decoration: line-through;\">Yeast</span>";
 	}
 	if(allergies.Gluten == 1){
 		allergenText = allergenText + "&nbsp<span style=\"color:white\">Gluten</span>";
-		allergenNote = allergenNote + "gluten, ";
+		remainingAllergens = allergies.Sesame;
+		allergenNote = allergenNote + "gluten";
+		if(remainingAllergens == 1){
+			allergenNote = allergenNote + " and ";
+		}
+		else{
+			allergenNote = allergenNote + ", ";
+		}
 	}
 	else{
 		allergenText = allergenText + "&nbsp<span style=\"color:#759966;text-decoration: line-through;\">Gluten</span>";
 	}
 	if(allergies.Sesame == 1){
 		allergenText = allergenText + "&nbsp<span style=\"color:white\">Sesame</span>";
-		allergenNote = allergenNote + "sesame, ";
+		allergenNote = allergenNote + "sesame ";
 	}
 	else{
 		allergenText = allergenText + "&nbsp<span style=\"color:#759966;text-decoration: line-through;\">Sesame</span>";
 	}
-	allerrgenNote = allergenNote + " as ingredients and has been produced under controlled conditions to prevent cross contamination with these allergens.";
+	allergenNote = allergenNote + " as ingredients and has been produced under controlled conditions to prevent cross contamination with these allergens.";
 	document.getElementById('allergens').innerHTML=allergenText;
 	document.getElementById('note').innerHTML=allergenNote;
 	document.getElementById('description').innerHTML=description;
