@@ -193,7 +193,33 @@ loadXMLDoc('http://trolleychecker.com/allergy/xml.php?upc='+ window.localStorage
 			document.write (zeros + barcode);
             </script></h3>
             <div style="width=50%">
-            <span style="font-size: x-small;">This product does not contain nuts as ingredients and has been produced under controlled conditions to prevent cross contamination with these allergens.</span>
+            <span style="font-size: x-small;">
+            <script = type="text/javascript">
+            document.write("This product does not contain ");
+			if(allergies.Nuts == 1){
+				document.write("Nuts");
+			}
+			if(allergies.Dairy == 1){
+				document.write("Dairy");
+			}
+			if(allergies.Egg == 1){
+				document.write("Egg");
+			}
+			if(allergies.Soya == 1){
+				document.write("Soya");
+			}
+			if(allergies.Yeast == 1){
+				document.write("Yeast");
+			}
+			if(allergies.Gluten == 1){
+				document.write("Gluten");
+			}
+			if(allergies.Sesame == 1){
+				document.write("Sesame");
+			}
+			document.write(" as ingredients and has been produced under controlled conditions to prevent cross contamination with these allergens.");
+			</script>
+            </span>
             </div>
             <p><a href="#" class="topcoat-button" id="scan"><img src="barcode.png"></a></p>
             </div>
