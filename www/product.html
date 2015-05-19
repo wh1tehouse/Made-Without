@@ -46,7 +46,7 @@
         <link rel="stylesheet" href="css/main.css">
         <script src="js/vendor/modernizr-2.7.1.min.js"></script>
 <script type="text/javascript">
-allergies = {};
+var allergies = {};
 function loadXMLDoc(url)
 {
 var xmlhttp;
@@ -109,26 +109,31 @@ xmlhttp.onreadystatechange=function()
     txt=txt + "</table>";
     //document.getElementById('txtCDInfo').innerHTML=txt;
 	allergenText = "";
+	allergenNote = "This product does not contain ";
 	if(allergies.Nuts == 1){
 		allergenText = allergenText + "<span style=\"color:white\">Nuts</span>";
+		allergenNote = allergenNote + "nuts, ";
 	}
 	else{
 		allergenText = allergenText + "<span style=\"color:#759966;text-decoration: line-through;\">Nuts</span>";
 	}
 	if(allergies.Dairy == 1){
 		allergenText = allergenText + "&nbsp;<span style=\"color:white\">Dairy</span>";
+		allergenNote = allergenNote + "dairy, ";
 	}
 	else{
 		allergenText = allergenText + "&nbsp<span style=\"color:#759966;text-decoration: line-through;\">Dairy</span>";
 	}
 	if(allergies.Egg == 1){
 		allergenText = allergenText + "&nbsp<span style=\"color:white\">Egg</span>";
+		allergenNote = allergenNote + "egg, ";
 	}
 	else{
 		allergenText = allergenText + "&nbsp<span style=\"color:#759966;text-decoration: line-through;\">Egg</span>";
 	}
 	if(allergies.Soya == 1){
 		allergenText = allergenText + "&nbsp<span style=\"color:white\">Soya</span>";
+		allergenNote = allergenNote + "soya, ";
 	}
 	else{
 		allergenText = allergenText + "&nbsp<span style=\"color:#759966;text-decoration: line-through;\">Soya</span>";
@@ -136,23 +141,28 @@ xmlhttp.onreadystatechange=function()
 	allergenText = allergenText + "<BR>";
 	if(allergies.Yeast == 1){
 		allergenText = allergenText + "<span style=\"color:white\">Yeast</span>";
+		allergenNote = allergenNote + "yeast, ";
 	}
 	else{
 		allergenText = allergenText + "<span style=\"color:#759966;text-decoration: line-through;\">Yeast</span>";
 	}
 	if(allergies.Gluten == 1){
 		allergenText = allergenText + "&nbsp<span style=\"color:white\">Gluten</span>";
+		allergenNote = allergenNote + "gluten, ";
 	}
 	else{
 		allergenText = allergenText + "&nbsp<span style=\"color:#759966;text-decoration: line-through;\">Gluten</span>";
 	}
 	if(allergies.Sesame == 1){
 		allergenText = allergenText + "&nbsp<span style=\"color:white\">Sesame</span>";
+		allergenNote = allergenNote + "sesame, ";
 	}
 	else{
 		allergenText = allergenText + "&nbsp<span style=\"color:#759966;text-decoration: line-through;\">Sesame</span>";
 	}
+	allerrgenNote = allergenNote + " as ingredients and has been produced under controlled conditions to prevent cross contamination with these allergens.";
 	document.getElementById('allergens').innerHTML=allergenText;
+	document.getElementById('note').innerHTML=allergenNote;
 	document.getElementById('description').innerHTML=description;
     }
   }
@@ -192,35 +202,9 @@ loadXMLDoc('http://trolleychecker.com/allergy/xml.php?upc='+ window.localStorage
 			}
 			document.write (zeros + barcode);
             </script></h3>
-            <div style="width=50%">
             <span style="font-size: x-small;">
-            <script = type="text/javascript">
-            document.write("This product does not contain ");
-			if(allergies.Nuts == 1){
-				document.write("Nuts");
-			}
-			if(allergies.Dairy == 1){
-				document.write("Dairy");
-			}
-			if(allergies.Egg == 1){
-				document.write("Egg");
-			}
-			if(allergies.Soya == 1){
-				document.write("Soya");
-			}
-			if(allergies.Yeast == 1){
-				document.write("Yeast");
-			}
-			if(allergies.Gluten == 1){
-				document.write("Gluten");
-			}
-			if(allergies.Sesame == 1){
-				document.write("Sesame");
-			}
-			document.write(" as ingredients and has been produced under controlled conditions to prevent cross contamination with these allergens.");
-			</script>
+			<div id="note"></div>
             </span>
-            </div>
             <p><a href="#" class="topcoat-button" id="scan"><img src="barcode.png"></a></p>
             </div>
             <p id="info"></p>
