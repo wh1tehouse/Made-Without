@@ -223,18 +223,26 @@ xmlhttp.send();
 
         <!-- Add your site or application content here -->
                 <div class="app">
+            <table height="100%" align="center"><tr><td>
             <div style="text-align: center">
             <h1><img src="madewithout.png" alt="Made Without" width="200" height="145" align="middle"></h1>
+            </td></tr>
+            <tr><td>
             <div id="txtCDInfo">
             <script type="text/javascript">
 loadXMLDoc('http://trolleychecker.com/allergy/xml.php?upc='+ window.localStorage.getItem("barcode").substr(2));
 </script>
 </div>
-            <!--<img src="dummy.jpg" width="150" height="220" id="allergies">-->
+            </td></tr>
+            <tr><td>
             <div style="text-align: center;line-height: 150%;word-spacing: 1px;font-size: xx-large;}">
             <div id="allergens"></div>
             </div>
+            </td></tr>
+            <tr><td>
             <span style="font-size: x-large;"><div id="description"></div></span>
+            </td></tr>
+            <tr><td>
             <h3><script type="text/javascript">
 			barcode = window.localStorage.getItem("barcode").substr(2);
 			barcodeLength = barcode.length;
@@ -244,17 +252,19 @@ loadXMLDoc('http://trolleychecker.com/allergy/xml.php?upc='+ window.localStorage
 			}
 			document.write (zeros + barcode);
             </script></h3>
-            <span style="font-size: x-small;">
-            <table width="90%" align="center">
-            <tr><td>
-			<div id="note"></div>
             </td></tr>
-            </table>
+            <tr><td>
+            <span style="font-size: x-small;">
+			<div id="note"></div>
             </span>
+            </td></tr>
+            <tr><td>
             <p><a href="#" class="topcoat-button" id="scan"><img src="barcode.png"></a></p>
             </div>
             <p id="info"></p>
             <div id="output"></div>
+            </td></tr>
+            </table>
             <!--<div style="text-align: center;line-height: 150%;word-spacing: 1px;font-size: xx-large;}">
   <script type="text/javascript">
   document.write("<p>Nuts Dairy Egg Soya<BR>Yeast Gluten Sesame</p>");
