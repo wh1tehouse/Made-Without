@@ -238,8 +238,8 @@ loadXMLDoc('http://trolleychecker.com/allergy/xml.php?upc='+ window.localStorage
             </div>
             </td></tr>
             <tr><td height="10">
-            <span style="margin-right: 20px;margin-left: 20px;font-size: x-large;text-align: center;"><div id="description"></div>
-            <h3><script type="text/javascript">
+            <span style="margin-right: 20px;margin-left: 20px;font-size: x-large;text-align: center;"><div id="description"></div></span>
+            <h3><center><script type="text/javascript">
 			barcode = window.localStorage.getItem("barcode").substr(2);
 			barcodeLength = barcode.length;
 			zeros = '';
@@ -247,7 +247,7 @@ loadXMLDoc('http://trolleychecker.com/allergy/xml.php?upc='+ window.localStorage
 				zeros = "0" + zeros;
 			}
 			document.write (zeros + barcode);
-            </script></h3></span>
+            </script></center></h3>
             </td></tr>
             <tr><td>
             <span style="margin-right: 20px;margin-left: 20px;font-size: x-small;text-align: center;">
