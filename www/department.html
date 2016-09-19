@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+        <meta http-equiv="cleartype" content="on">
+
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/touch/apple-touch-icon-144x144-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/touch/apple-touch-icon-114x114-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/touch/apple-touch-icon-72x72-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" href="img/touch/apple-touch-icon-57x57-precomposed.png">
+        <link rel="shortcut icon" sizes="196x196" href="img/touch/touch-icon-196x196.png">
+        <link rel="shortcut icon" href="img/touch/apple-touch-icon.png">
+
+        <!-- Tile icon for Win8 (144x144 + tile color) -->
+        <meta name="msapplication-TileImage" content="img/touch/apple-touch-icon-144x144-precomposed.png">
+        <meta name="msapplication-TileColor" content="#222222">
+
+        <!-- SEO: If mobile URL is different from desktop URL, add a canonical link to the desktop page -->
+        <!--
+        <link rel="canonical" href="http://www.example.com/" >
+        -->
+
+        <!-- Add to homescreen for Chrome on Android -->
+        <!--
+        <meta name="mobile-web-app-capable" content="yes">
+        -->
+
+        <!-- For iOS web apps. Delete if not needed. https://github.com/h5bp/mobile-boilerplate/issues/94 -->
+        <!--
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="apple-mobile-web-app-title" content="">
+        -->
+
+        <!-- This script prevents links from opening in Mobile Safari. https://gist.github.com/1042026 -->
+        <!--
+        <script>(function(a,b,c){if(c in b&&b[c]){var d,e=a.location,f=/^(a|html)$/i;a.addEventListener("click",function(a){d=a.target;while(!f.test(d.nodeName))d=d.parentNode;"href"in d&&(d.href.indexOf("http")||~d.href.indexOf(e.host))&&(a.preventDefault(),e.href=d.href)},!1)}})(document,window.navigator,"standalone")</script>
+        -->
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        <script src="js/vendor/modernizr-2.7.1.min.js"></script>
+<script type="text/javascript">
+var allergies = {};
+function loadXMLDoc(url)
+{
+var xmlhttp;
+var txt,xx,x,i;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xmlhttp.onreadystatechange=function()
+  {
+  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    {
+    txt="<table border='1'><tr><th>Allergen</th><th>Contains</th></tr>";
+	description = xmlhttp.responseXML.documentElement.getElementsByTagName("description");
+	description = description[0].firstChild.nodeValue;
+
+    x=xmlhttp.responseXML.documentElement.getElementsByTagName("item");
+    for (i=0;i<x.length;i++)
+      {
+      txt=txt + "<tr>";
+      xx=x[i].getElementsByTagName("allergen");
+	  yy=x[i].getElementsByTagName("contains");
+	  allergen = xx[0].firstChild.nodeValue;
+	  contains = yy[0].firstChild.nodeValue;
+	  allergies[allergen] = contains;
+        {
+        try
+          {
+          txt=txt + "<td>";
+		  //if(yy[0].firstChild.nodeValue = 1){
+			  //txt=txt + "white'>";
+		  //}
+		  //else{
+			  //txt=txt + "red'>";
+		  //}
+		  txt=txt + xx[0].firstChild.nodeValue + allergies.Yeast + "</td>";
+          }
+        catch (er)
+          {
+          txt=txt + "<td>&nbsp;</td>";
+          }
+        }
+    //xx=x[i].getElementsByTagName("contains");
+      {
+        try
+          {
+          txt=txt + "<td>" + yy[0].firstChild.nodeValue + "</td>";
+          }
+        catch (er)
+          {
+          txt=txt + "<td>&nbsp;</td>";
+          }
+        }
+      txt=txt + "</tr>";
+      }
+    txt=txt + "</table>";
+    //document.getElementById('txtCDInfo').innerHTML=txt;
+	allergenText = "";
+	allergenNote = "This product does not contain ";
+	if(allergies.Nuts == 1){
+		allergenText = allergenText + "<span style=\"color:white\">Nuts</span>";
+		remainingAllergens = allergies.Dairy + allergies.Egg + allergies.Soya + allergies.Yeast + allergies.Gluten + allergies.Sesame;
+		allergenNote = allergenNote + "nuts";
+		if(remainingAllergens == 1){
+			allergenNote = allergenNote + " or ";
+		}
+		else{
+			allergenNote = allergenNote + ", ";
+		}
+	}
+	else{
+		allergenText = allergenText + "<span style=\"color:#759966;text-decoration: line-through;\">Nuts</span>";
+	}
+	if(allergies.Dairy == 1){
+		allergenText = allergenText + "&nbsp;<span style=\"color:white\">Dairy</span>";
+		remainingAllergens = allergies.Egg + allergies.Soya + allergies.Yeast + allergies.Gluten + allergies.Sesame;
+		allergenNote = allergenNote + "dairy";
+		if(remainingAllergens == 1){
+			allergenNote = allergenNote + " or ";
+		}
+		else{
+			allergenNote = allergenNote + ", ";
+		}
+	}
+	else{
+		allergenText = allergenText + "&nbsp<span style=\"color:#759966;text-decoration: line-through;\">Dairy</span>";
+	}
+	if(allergies.Egg == 1){
+		allergenText = allergenText + "&nbsp<span style=\"color:white\">Egg</span>";
+		remainingAllergens = allergies.Soya + allergies.Yeast + allergies.Gluten + allergies.Sesame;
+		allergenNote = allergenNote + "egg";
+		if(remainingAllergens == 1){
+			allergenNote = allergenNote + " or ";
+		}
+		else{
+			allergenNote = allergenNote + ", ";
+		}
+	}
+	else{
+		allergenText = allergenText + "&nbsp<span style=\"color:#759966;text-decoration: line-through;\">Egg</span>";
+	}
+	if(allergies.Soya == 1){
+		allergenText = allergenText + "&nbsp<span style=\"color:white\">Soya</span>";
+		remainingAllergens = allergies.Yeast + allergies.Gluten + allergies.Sesame;
+		allergenNote = allergenNote + "soya";
+		if(remainingAllergens == 1){
+			allergenNote = allergenNote + " or ";
+		}
+		else{
+			allergenNote = allergenNote + ", ";
+		}
+	}
+	else{
+		allergenText = allergenText + "&nbsp<span style=\"color:#759966;text-decoration: line-through;\">Soya</span>";
+	}
+	allergenText = allergenText + "<BR>";
+	if(allergies.Yeast == 1){
+		allergenText = allergenText + "<span style=\"color:white\">Yeast</span>";
+		remainingAllergens = allergies.Gluten + allergies.Sesame;
+		allergenNote = allergenNote + "yeast";
+		if(remainingAllergens == 1){
+			allergenNote = allergenNote + " or ";
+		}
+		else{
+			allergenNote = allergenNote + ", ";
+		}
+	}
+	else{
+		allergenText = allergenText + "<span style=\"color:#759966;text-decoration: line-through;\">Yeast</span>";
+	}
+	if(allergies.Gluten == 1){
+		allergenText = allergenText + "&nbsp<span style=\"color:white\">Gluten</span>";
+		remainingAllergens = allergies.Sesame;
+		allergenNote = allergenNote + "gluten";
+		if(remainingAllergens == 1){
+			allergenNote = allergenNote + " or ";
+		}
+		else{
+			allergenNote = allergenNote + ", ";
+		}
+	}
+	else{
+		allergenText = allergenText + "&nbsp<span style=\"color:#759966;text-decoration: line-through;\">Gluten</span>";
+	}
+	if(allergies.Sesame == 1){
+		allergenText = allergenText + "&nbsp<span style=\"color:white\">Sesame</span>";
+		allergenNote = allergenNote + "sesame ";
+	}
+	else{
+		allergenText = allergenText + "&nbsp<span style=\"color:#759966;text-decoration: line-through;\">Sesame</span>";
+	}
+	allergenNote = allergenNote + " as ingredients and has been produced under controlled conditions to prevent cross contamination with these allergens.";
+	document.getElementById('allergens').innerHTML=allergenText;
+	document.getElementById('note').innerHTML=allergenNote;
+	document.getElementById('description').innerHTML=description;
+    }
+  }
+xmlhttp.open("GET",url,true);
+xmlhttp.send();
+}
+</script>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <style type="text/css">
+    body {
+	background-color: #99b58d;
+}
+    </style>
+    </head>
+<body bgcolor="99b58d">
+
+        <!-- Add your site or application content here -->
+                <div class="app">
+            <table height="100%" align="center"><tr><td>
+            <div style="text-align: center">
+            <h1><img src="madewithout.png" alt="Made Without" width="200" height="145" align="middle"></h1>
+            </td></tr>
+            <tr><td height="100">
+            <div id="txtCDInfo">
+            <script type="text/javascript">
+loadXMLDoc('http://trolleychecker.com/allergy/xml.php?upc='+ window.localStorage.getItem("barcode").substr(2));
+</script>
+</div>
+            <div style="text-align: center;line-height: 150%;word-spacing: 1px;font-size: xx-large;}">
+            <div id="allergens"></div>
+            </div>
+            </td></tr>
+            <tr><td height="10" align="center">
+            <span style="font-size: x-large;text-align: center;"><div id="description"></div></span>
+            <span style="font-size: small;text-align: center;">
+            <script type="text/javascript">
+			barcode = window.localStorage.getItem("barcode").substr(2);
+			barcodeLength = barcode.length;
+			zeros = '';
+			for(x=0;x<(8-barcodeLength);x++){
+				zeros = "0" + zeros;
+			}
+			document.write (zeros + barcode);
+            </script></span>
+            </td></tr>
+            <tr><td>
+            <span style="margin-right: 20px;margin-left: 20px;font-size: x-small;text-align: center;">
+			<div id="note"></div>
+            </span>
+            </td></tr>
+            <tr><td align="center">
+            <p><a href="#" class="topcoat-button" id="scan"><img src="barcode.png"></a></p>
+            </div>
+            <p id="info"></p>
+            <div id="output"></div>
+            </td></tr>
+            </table>
+            <!--<div style="text-align: center;line-height: 150%;word-spacing: 1px;font-size: xx-large;}">
+  <script type="text/javascript">
+  document.write("<p>Nuts Dairy Egg Soya<BR>Yeast Gluten Sesame</p>");
+  </script>
+  </div>-->
+
+        </div>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="barcodescanner.js"></script>
+        <script type="text/javascript" src="childbrowser.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/load.js"></script>
+        <script type="text/javascript">
+            app.initialize();
+        </script>
+        <script src="js/vendor/jquery-2.1.0.min.js"></script>
+        <script src="js/helper.js"></script>
+        <script src="js/main.js"></script>
+        
+        <!--<script type="text/javascript">document.getElementById('allergies').src = 'http://trolleychecker.com/allergy/image.php?upc=' + window.localStorage.getItem("barcode").substr(2);</script>-->
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+<script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X');ga('send','pageview');
+        </script>
+    </body>
+</html>
